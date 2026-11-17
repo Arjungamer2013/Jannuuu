@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffe5ef">
+<title>For Jaanuu ♡</title>
+<style>
+:root{--pink:#f5a9c5;--rose:#e879a6;--deep:#8d4568;--cream:#fff9fb;--ink:#654457}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:var(--ink);font-family:Georgia,'Times New Roman',serif;background:radial-gradient(circle at 15% 15%,#fff 0 2px,transparent 3px),radial-gradient(circle at 85% 30%,#fff8 0 2px,transparent 3px),linear-gradient(145deg,#fff0f5,#ffe1ec 52%,#f9d5e5);background-size:100px 100px,140px 140px,auto;overflow-x:hidden}
+button{font:inherit;cursor:pointer}
+.wrap{width:min(900px,92%);margin:auto;padding:34px 0 60px}
+.top{text-align:center;font-size:.82rem;letter-spacing:.2em;text-transform:uppercase;color:#b76b8b}
+.card{position:relative;background:#ffffffc9;border:1px solid #fff;box-shadow:0 18px 60px #b76b8b22;border-radius:28px;padding:clamp(24px,6vw,56px);margin:22px auto;backdrop-filter:blur(8px)}
+.hero{text-align:center;min-height:470px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.eyebrow{color:#c16b91;letter-spacing:.14em;text-transform:uppercase;font:600 .75rem Arial,sans-serif}
+h1{font-size:clamp(3rem,10vw,6.4rem);line-height:1;margin:18px 0;color:#b95f88;font-weight:normal}
+h2{font-size:clamp(1.8rem,5vw,2.6rem);font-weight:normal;text-align:center;margin:0 0 18px;color:#a9557c}
+p{line-height:1.8;font-size:1.08rem}
+.sub{max-width:510px;margin:0 auto 25px}
+.heart{font-size:2rem;animation:pulse 1.5s infinite}
+@keyframes pulse{50%{transform:scale(1.2)}}
+.btn{border:0;border-radius:999px;background:linear-gradient(135deg,#e98bb0,#c96894);color:white;padding:13px 24px;box-shadow:0 8px 20px #c9689440;transition:.2s}
+.btn:hover{transform:translateY(-2px);filter:saturate(1.1)}
+.btn.secondary{background:#fff;color:#ad5c83;border:1px solid #f1bfd2;box-shadow:none}
+.hidden{display:none!important}
+.progress{height:5px;background:#f8dce7;border-radius:9px;overflow:hidden;margin:0 0 24px}
+.progress span{display:block;height:100%;width:0;background:#d879a1;transition:width .4s}
+.question{text-align:center;min-height:230px}
+.answers{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:25px 0}
+.answer{border:1px solid #edbfd1;background:#fff8fb;color:#98506f;border-radius:18px;padding:13px 17px}
+.answer:hover{background:#ffe8f0}
+.feedback{min-height:28px;color:#b65f87;font-style:italic}
+.letter{max-width:650px;margin:auto}
+.letter p{white-space:pre-line}
+.sign{text-align:right;color:#b45f86;font-style:italic;font-size:1.3rem;margin-top:30px}
+.final{text-align:center;overflow:hidden}
+.final h2{font-size:clamp(2.2rem,7vw,4rem)}
+.bigheart{font-size:4rem;display:block;margin:12px}
+.footer{text-align:center;color:#ad7590;font: .8rem Arial,sans-serif;margin-top:28px}
+.float{position:fixed;pointer-events:none;bottom:-30px;color:#e58bad;animation:rise 7s linear forwards;opacity:.75}
+@keyframes rise{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+.note{font: .85rem Arial,sans-serif;color:#a56c85;text-align:center}
+@media(max-width:520px){.card{border-radius:22px}.hero{min-height:410px}.answers{flex-direction:column}.answer{width:100%}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="top">a little something, just for you ♡</div>
+  <section class="card hero" id="welcome">
+    <div class="heart">♡</div>
+    <div class="eyebrow">Here’s a little gift from mee😝</div>
+    <h1>Jaanuu</h1>
+    <p class="sub">I couldn't give a gift to you in person so I made you this and btw I still have that envelope and the next time we meet I'll give it to you so till then keep this.</p>
+    <button class="btn" onclick="begin()">Open your gift ♡</button>
+    <p class="note">made with love by ajuu</p>
+  </section>
+
+  <section class="card hidden" id="quiz">
+    <div class="progress"><span id="bar"></span></div>
+    <div class="question">
+      <div class="eyebrow" id="count">a tiny quiz · 1 of 3</div>
+      <h2 id="qtitle">Ready, jaanuu?</h2>
+      <p id="qdesc">There are no wrong answers. Just pick what feels right.</p>
+      <div class="answers" id="answers"></div>
+      <div class="feedback" id="feedback" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="card hidden" id="letter">
+    <div class="eyebrow" style="text-align:center">a letter from ajuu</div>
+    <h2>For you, jaanuu ♡</h2>
+    <div class="letter">
+      <p>My dearest jaanu,
+
+Even though there's distance between us, I hope you never forget how special you are to me. I really wished that I could see your reaction while seeing this but unfortunately I can't😑😑.
+
+Until that day here's a little reminder: Your smile matters to me, your presence matters to me and obviously you matter to me and I'm grateful that you chose me.
+
+I can't promise you that every day will be perfect, but I can promise to keep choosing you every day until the end, and I'm truly sorry for hurting you last night.</p>
+      <div class="sign">— ajuu ♡</div>
+    </div>
+    <div style="text-align:center;margin-top:28px"><button class="btn" onclick="showFinal()">One last thing…</button></div>
+  </section>
+
+  <section class="card final hidden" id="final">
+    <div class="eyebrow">your little surprise</div>
+    <span class="bigheart">💗</span>
+    <h2>Distance can't make you less special.</h2>
+    <p>One day I hope this won't have to be a gift on a screen. Until then I'll keep sending you online gifts🫪🫶</p>
+    <p style="font-size:1.35rem;color:#b45f86">I love you, jaanuu. ♡</p>
+    <button class="btn secondary" onclick="replay()">Read it again</button>
+  </section>
+  <div class="footer">a tiny website made especially for jaanuu · ୨୧</div>
+</main>
+<script>
+const questions=[
+ {title:"A little question, jaanuu…",desc:"If we could spend a day together right now, what would you choose?",answers:["A cozy movie day 🍿","A long walk together 🌷","Just talking for hours ☁️"],responses:["Cozy days with you sound perfect. ♡","I'd want to make that walk last forever. ♡","Honestly, I could talk with you for hours too. ♡"]},
+ {title:"What's your kind of happiness?",desc:"Pick the little thing that would make your day brighter.",answers:["A sweet message 💌","Your favourite treat 🍓","A surprise hug 🧸"],responses:["Then here's a message: you're wonderful. ♡","You deserve all the little treats. ♡","Saving that hug for when we meet. ♡"]},
+ {title:"One last question…",desc:"Do you know how loved and appreciated you are?",answers:["I hope so 🥺","Tell me again 💗","More than you know 🌸"],responses:["I hope I show you in a hundred little ways. ♡","You are loved, jaanuu. Never doubt that. ♡","Then I'll keep finding ways to remind you. ♡"]}
+];
+let step=0;
+function begin(){document.getElementById('welcome').classList.add('hidden');document.getElementById('quiz').classList.remove('hidden');renderQuestion()}
+function renderQuestion(){
+ const q=questions[step];document.getElementById('count').textContent=`a tiny quiz · ${step+1} of ${questions.length}`;
+ document.getElementById('qtitle').textContent=q.title;document.getElementById('qdesc').textContent=q.desc;
+ document.getElementById('bar').style.width=((step)/questions.length*100)+'%';
+ document.getElementById('feedback').textContent='';
+ const box=document.getElementById('answers');box.innerHTML='';
+ q.answers.forEach((a,i)=>{const b=document.createElement('button');b.className='answer';b.textContent=a;b.onclick=()=>choose(i);box.appendChild(b)});
+}
+function choose(i){
+ document.getElementById('feedback').textContent=questions[step].responses[i];
+ const box=document.getElementById('answers');box.innerHTML='';
+ const b=document.createElement('button');b.className='btn';b.textContent=step===questions.length-1?'Read my letter ♡':'Next question →';
+ b.onclick=()=>{step++;if(step<questions.length)renderQuestion();else{document.getElementById('quiz').classList.add('hidden');document.getElementById('letter').classList.remove('hidden');document.getElementById('bar').style.width='100%'}};
+ box.appendChild(b);
+}
+function showFinal(){document.getElementById('letter').classList.add('hidden');document.getElementById('final').classList.remove('hidden');}
+function replay(){step=0;document.getElementById('final').classList.add('hidden');document.getElementById('welcome').classList.remove('hidden')}
+function floatHeart(){const e=document.createElement('span');e.className='float';e.textContent=['♡','♥','✧','୨୧'][Math.floor(Math.random()*4)];e.style.left=Math.random()*100+'vw';e.style.fontSize=(14+Math.random()*20)+'px';document.body.appendChild(e);setTimeout(()=>e.remove(),7200)}
+setInterval(floatHeart,1300);
+</script>
+</body>
+</html>
